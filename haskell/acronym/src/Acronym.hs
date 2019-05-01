@@ -1,8 +1,14 @@
 
 module Acronym (abbreviate) where
 
-import Data.Char       (isLetter, toUpper)
-import Data.List.Split (wordsBy)
+import Data.Char
+
+keepChar :: (Char, String) -> Char -> (Char, String)
+keepChar (l, xs) c
+    | l ==  '\''                    = (c, xs)
+    | not (isAlpha l) && isAlpha c  = (c, xs++[toUpper c])
+    | isLower l && isUpper c        = (c, xs++[toUpper c])
+    | otherwise                     = (c, xs)
 
 abbreviate :: String -> String
-abbreviate xs = (map (toUpper . head) . wordsBy (not . isLetter)) xs
+abbreviate = snd . foldl keepChar (' ',[])

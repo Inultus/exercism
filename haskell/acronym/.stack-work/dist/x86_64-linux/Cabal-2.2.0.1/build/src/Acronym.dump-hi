@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-02-08 17:20:39.724643156 UTC
+2019-05-01 22:39:01.897190769 UTC
 
 interface acronym-1.6.0.9-3HenuQvDJBoLwLgGHySNyf:Acronym 8043
-  interface hash: 532d743595f2ccb48c0d63d2c98b89e3
-  ABI hash: aa1fa99f93078448f2b89c195c9e368f
+  interface hash: 7b32a1c1b63ffeffeb5ffdbf6de3cc97
+  ABI hash: 761064a6d86871d454c53cb40fed8d0a
   export-list hash: 51f5cd317ca3818c839f4419318bf009
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1f596daf84c7527444ae092b33472386
@@ -24,9 +24,13 @@ family instance modules: base-4.11.1.0:Control.Applicative
                          base-4.11.1.0:Data.Functor.Identity base-4.11.1.0:Data.Monoid
                          base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:GHC.Generics
                          base-4.11.1.0:GHC.IO.Exception
+import  -/  base-4.11.1.0:Data.Char 3e89818e2b8ef1a2cc5393163484da72
+import  -/  base-4.11.1.0:Data.Foldable 8ed35c38958063956af33c935ea03444
+import  -/  base-4.11.1.0:Data.Tuple 3af66f3ac61ed95ba8a3a3f68ebc5003
 import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
-import  -/  base-4.11.1.0:GHC.Err 5e26aa744981f14e0f1e4d29c44ac52e
+import  -/  base-4.11.1.0:GHC.Unicode 8234c40b59f035e845832a42e8725a00
 import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  ghc-prim-0.5.2.0:GHC.Classes 122abfcd7450c6c11602933c9ca5f80d
 d21f0d96a68488dc7f04a3615a4d3ef0
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -48,15 +52,22 @@ bfe683040cbb0cc31f8ad701643a5c66
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
      Unfolding: ("acronym-1.6.0.9-3HenuQvDJBoLwLgGHySNyf"#) -}
-8eebe6c826ca6d57c5b1943c06c9a459
-  $wabbreviate :: GHC.Prim.Void# -> GHC.Base.String
-  {- Arity: 1, Strictness: <B,A>x, Inline: [0] -}
-5af78c8c884dd9feb201ee6b7c0d3889
+ccae3e5e5721508a758918439b8b568c
+  $wgo ::
+    [GHC.Types.Char]
+    -> GHC.Types.Char -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,1*U><L,1*U(1*U)><L,1*U>, Inline: [0] -}
+6f170a7e57a621de42e479a80d044f10
   abbreviate :: GHC.Base.String -> GHC.Base.String
-  {- Arity: 1, Strictness: <B,A>x, Inline: [0],
-     Unfolding: InlineRule (1, True, True)
-                (\ (w :: GHC.Base.String) ->
-                 Acronym.$wabbreviate GHC.Prim.void#) -}
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (x :: [GHC.Types.Char]) ->
+                 Acronym.$wgo
+                   x
+                   Acronym.abbreviate1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+d6bb961213284d37e9ec70ea82733786
+  abbreviate1 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# ' '#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
